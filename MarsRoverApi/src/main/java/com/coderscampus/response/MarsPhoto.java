@@ -1,9 +1,12 @@
-package com.coderscampus;
+package com.coderscampus.response;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class MarsPhoto {
 	private Long id;
 	private Integer sol;
 	private MarsCamera camera;
+	@JsonProperty("img_src")
 	private String imgSrc;
 	
 	public Long getId() {
