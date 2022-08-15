@@ -1,0 +1,14 @@
+<html xmlns:th="http://thymeLeaf.org">
+	<head>
+		<title>Mars Rover API App</title>
+	</head>
+	<body>
+		<h2>Welcome to the Mars Rover API Web App</h2>	
+		
+		<img th:each ="photo : ${roverData.photos}" th:src="${photo.imgSrc}"/>
+		<div th:text="${roverData}">
+		</div>
+		
+	</body>
+	
+</html>
