@@ -28,4 +28,5 @@ function highlightBtnByRoverType (roverType) {
 	
 	document.getElementById('marsApi'+roverType).classList.remove('btn-secondary')
 	document.getElementById('marsApi'+roverType).classList.add('btn-primary')
+	
 }
