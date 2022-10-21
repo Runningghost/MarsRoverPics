@@ -4,7 +4,7 @@ public class HomeDto {
 	
 	private String marsApiRoverData;
 	private Integer marsSol;
-	private Boolean defaultcheck1;
+	private Boolean defaultCheck1;
 	
 	public String getMarsApiRoverData() {
 		return marsApiRoverData;
@@ -18,11 +18,11 @@ public class HomeDto {
 	public void setMarsSol(Integer marsSol) {
 		this.marsSol = marsSol;
 	}
-	public Boolean getDefaultcheck1() {
-		return defaultcheck1;
+	public Boolean getDefaultCheck1() {
+		return defaultCheck1;
 	}
-	public void setDefaultcheck1(Boolean defaultcheck1) {
-		this.defaultcheck1 = defaultcheck1;
+	public void setDefaultCheck1(Boolean defaultCheck1) {
+		this.defaultCheck1 = defaultCheck1;
 	}
 	
 	
