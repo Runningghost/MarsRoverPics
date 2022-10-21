@@ -2,15 +2,12 @@ package com.coderscampus.web;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.thymeleaf.util.StringUtils;
-
 import com.coderscampus.response.MarsRoverApiResponse;
 import com.coderscampus.service.MarsRoverApiService;
+import com.coderscampusDto.HomeDto;
 
 @Controller
 public class HomeController {
@@ -19,17 +16,17 @@ public class HomeController {
 	private MarsRoverApiService roverService;
 	
 	@GetMapping("/")
-	public String getHomeView(ModelMap model, @RequestParam(required=false) String marsApiRoverData,
-		@RequestParam(required=false) Integer marsSol) {
+	public String getHomeView(ModelMap model, HomeDto homeDto) {
 		// if request param is empty, then set a default value
-		if (StringUtils.isEmpty(marsApiRoverData)) {
-			marsApiRoverData = "opportunity";
+		if (StringUtils.isEmpty(homeDto.getMarsApiRoverData())) {
+			homeDto.setMarsApiRoverData("opportunity");
 		}
-		if (marsSol == null)
-			marsSol = 1;
+		if (homeDto.getMarsSol() == null)
+			homeDto.setMarsSol(1);
 			
-		MarsRoverApiResponse roverData = roverService.getRoverData(marsApiRoverData, marsSol);
+		MarsRoverApiResponse roverData = roverService.getRoverData(homeDto.getMarsApiRoverData(), homeDto.getMarsSol());
 		model.put("roverData", roverData);
+		model.put("homeDto", homeDto);
 		
 		return "index";
 		
