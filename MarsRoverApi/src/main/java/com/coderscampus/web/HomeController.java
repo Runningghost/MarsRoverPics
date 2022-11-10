@@ -29,7 +29,7 @@ public class HomeController {
 		MarsRoverApiResponse roverData = roverService.getRoverData(homeDto);
 		model.put("roverData", roverData);
 		model.put("homeDto", homeDto);
-		
+		model.put("validCameras", roverService.getValidCameras());
 		return "index";
 		
 	}
