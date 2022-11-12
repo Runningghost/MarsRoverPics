@@ -1,7 +1,7 @@
 package com.coderscampusDto;
 
 public class HomeDto {
-	
+	private Long userId;
 	private String marsApiRoverData;
 	private Integer marsSol;
 	private Boolean cameraFhaz;
@@ -15,6 +15,12 @@ public class HomeDto {
 	private Boolean cameraMinites;
 	private Boolean rememberPreferences;
 
+	public Long getUserId() {
+		return userId;
+	}
+	public void setUserId(Long userId) {
+		this.userId = userId;
+	}
 	public String getMarsApiRoverData() {
 		return marsApiRoverData;
 	}
@@ -86,6 +92,14 @@ public class HomeDto {
 	}
 	public void setRememberPreferences(Boolean rememberPreferences) {
 		this.rememberPreferences = rememberPreferences;
+	}
+	@Override
+	public String toString() {
+		return "HomeDto [userId=" + userId + ", marsApiRoverData=" + marsApiRoverData + ", marsSol=" + marsSol
+				+ ", cameraFhaz=" + cameraFhaz + ", cameraRhaz=" + cameraRhaz + ", cameraMast=" + cameraMast
+				+ ", cameraChemcam=" + cameraChemcam + ", cameraMahli=" + cameraMahli + ", cameraMardi=" + cameraMardi
+				+ ", cameraNavcam=" + cameraNavcam + ", cameraPancam=" + cameraPancam + ", cameraMinites="
+				+ cameraMinites + ", rememberPreferences=" + rememberPreferences + "]";
 	}
 	
 	

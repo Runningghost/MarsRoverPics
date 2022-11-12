@@ -6,7 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.thymeleaf.util.StringUtils;
+
 import com.coderscampus.response.MarsRoverApiResponse;
 import com.coderscampus.service.MarsRoverApiService;
 import com.coderscampusDto.HomeDto;
@@ -30,8 +32,15 @@ public class HomeController {
 		model.put("roverData", roverData);
 		model.put("homeDto", homeDto);
 		model.put("validCameras", roverService.getValidCameras().get(homeDto.getMarsApiRoverData()));
+		
 		return "index";
 		
+	}
+	
+	@PostMapping("/")
+	public String postHomeView (HomeDto homeDto) {
+		System.out.println(homeDto);
+		return "redirect:/";
 	}
 
 }
