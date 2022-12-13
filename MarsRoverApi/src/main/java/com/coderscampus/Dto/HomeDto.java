@@ -1,6 +1,16 @@
-package com.coderscampusDto;
+package com.coderscampus.Dto;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="mars_api_preferences")
 public class HomeDto {
+	private Long id;
 	private Long userId;
 	private String marsApiRoverData;
 	private Integer marsSol;
@@ -14,13 +24,21 @@ public class HomeDto {
 	private Boolean cameraPancam;
 	private Boolean cameraMinites;
 	private Boolean rememberPreferences;
-
+	
+	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+	public Long getId() {
+		return id;
+	}
+	public void setId(Long id) {
+		this.id = id;
+	}
 	public Long getUserId() {
 		return userId;
 	}
 	public void setUserId(Long userId) {
 		this.userId = userId;
 	}
+	@Column(length=20)
 	public String getMarsApiRoverData() {
 		return marsApiRoverData;
 	}

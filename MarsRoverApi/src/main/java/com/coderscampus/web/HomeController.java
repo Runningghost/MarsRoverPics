@@ -9,9 +9,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.thymeleaf.util.StringUtils;
 
+import com.coderscampus.Dto.HomeDto;
 import com.coderscampus.response.MarsRoverApiResponse;
 import com.coderscampus.service.MarsRoverApiService;
-import com.coderscampusDto.HomeDto;
 
 @Controller
 public class HomeController {
@@ -39,6 +39,7 @@ public class HomeController {
 	
 	@PostMapping("/")
 	public String postHomeView (HomeDto homeDto) {
+		roverService.save(homeDto);
 		System.out.println(homeDto);
 		return "redirect:/";
 	}
