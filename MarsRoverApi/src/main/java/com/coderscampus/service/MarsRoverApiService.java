@@ -13,7 +13,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-import com.coderscampus.Dto.HomeDto;
+import com.coderscampus.dto.HomeDto;
 import com.coderscampus.repository.PreferencesRepository;
 import com.coderscampus.response.MarsPhoto;
 import com.coderscampus.response.MarsRoverApiResponse;
@@ -74,9 +74,13 @@ public class MarsRoverApiService {
 		return validCameras;
 	}
 
-	public void save(HomeDto homeDto) {
-		preferencesRepo.save(homeDto);
+	public HomeDto save(HomeDto homeDto) {
+		return preferencesRepo.save(homeDto);
 		
+	}
+
+	public HomeDto findByUserId(Long userID) {
+		return preferencesRepo.findByUserId(userID);
 	}
 	
 
